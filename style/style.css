@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: yellowgreen;
+}
+
+main {
+  background-color: blueviolet;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+div input {
+  width: 90vw;
+  max-width: 500px;
+  height: 50px;
+}
+
+#area-sexo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#in-sexo input {
+  width: 40%;
+  height: 20px;
+}
+
+#area-dados-pessoais {
+  display: block;
+}
+
+#facul-area {
+  display: none;
+}
+
+#area-formacao {
+  display: block;
+  background-color: cornflowerblue;
+}
+
+#habilidade-area {
+  display: block;
+}
+
+#experiencia-area {
+  display: block;
+}
+
+
+.sobre__text {
+  width: 90vw;
+  height: 150px;
+}
+
+.container {
+  display: none;
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculo</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+  <main id="main">
+    <h1>Curriculo</h1>
+
+
+    <form action="">
+
+      <div id="area-dados-pessoais">
+        <h2>Dados Pessoais</h2>
+
+        <button type="submit" id="gerar">GERAR</button>
+
+        <div>
+          <label for="nome-completo">Nome Completo: </label> <br>
+          <input type="text" name="nome-completo" id="nome-completo" />
+        </div>
+
+        <div id="in-sexo">
+          <label for="area-sexo">Sexo:</label>
+          <div id="area-sexo">
+            <div>
+              <label for="sexo-m">Masculino</label>
+              <input type="radio" name="sexo" id="sexo-m" value="Masculino" />
+            </div>
+            <div>
+              <label for="sexo-f">Feminino</label>
+              <input type="radio" name="sexo" id="sexo-f" value="Feminino" />
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label for="data-nascimento">Data de Nascimento:</label>
+          <input type="date" name="data-nascimento" id="data-nascimento" />
+        </div>
+
+        <div>
+          <label for="estado-civil">Estado Civil: </label> <br>
+          <select name="estado-civil" id="estado-civil">
+            <option value="solteiro">Solteiro</option>
+            <option value="casado">Casado</option>
+            <option value="viuvo">Viuvo</option>
+            <option value="divorciado">Divorciado</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="cep">CEP: </label> <button id="checarCep">Buscar</button>
+          <input type="text" name="cep" id="input-cep">
+        </div>
+
+        <div>
+          <label for="endereco">Endereço: </label> <br>
+          <input type="text" name="endereco" id="endereco">
+
+          <div>
+            <label for="bairro">Bairro: </label><br>
+            <input type="text" name="bairro" id="bairro">
+          </div>
+          <div>
+            <label for="cidade">Cidade: </label><br>
+            <input type="text" name="cidade" id="cidade">
+          </div>
+          <div>
+            <label for="estado">Estado: </label><br>
+            <input type="text" name="estado" id="estado">
+          </div>
+          <div>
+            <label for="complemento">Complemento: </label><br>
+            <input type="text" name="complemento" id="complemento">
+          </div>
+          <div>
+            Filiação:
+            <p>
+              <label for="nome-pai">Nome do Pai: </label> <br>
+              <input type="text" name="nome-pai" id="nome-pai">
+              <br>
+              <label for="nome-mae">Nome da Mãe: </label> <br>
+              <input type="text" name="nome-mae" id="nome-mae">
+            </p>
+            </p>
+            <p>
+              <label for="celular">Celular: </label><br>
+              <input type="text" name="celular" id="celular">
+          </div>
+        </div>
+      </div>
+
+
+      <div id="area-formacao">
+
+        <h2>Formação</h2>
+
+        <select name="formacao" id="formacao">
+          <option value="Ensino Fundamental">Fundamental Completo</option>
+          <option value="Ensino Médio">Médio Completo</option>
+          <option value="Ensino Superior">Superior Completo</option>
+          <option value="Cursando">Superior em Curso</option>
+        </select>
+
+        <br>
+
+        <div id="escola-area">
+          <label for="escolaFacul">Escola:</label>
+          <input type="text" name="escolaFacul" id="escola">
+
+        </div>
+
+        <div id="facul-area">
+          <label for="curso">Curso:</label>
+          <input type="text" name="curso" id="curso">
+
+          <label for="escolaFacul">Faculdade:</label>
+          <input type="text" name="escolaFacul" id="facul">
+        </div>
+
+      </div>
+
+      <div id="habilidade-area">
+
+        <h2>Conhecimentos e Habilidades</h2>
+
+        <input type="text" name="hab1" id="hab1">
+        <input type="text" name="hab2" id="hab2">
+        <input type="text" name="hab3" id="hab3">
+        <input type="text" name="hab4" id="hab4">
+        <input type="text" name="hab5" id="hab5">
+
+      </div>
+
+      <div id="experiencia-area">
+
+        <h2>Experiência Profissional</h2>
+
+
+        <div id="exp1">
+          <label for="cargo">Cargo</label>
+          <input type="text" name="cargo" id="cargo1">
+
+          <label for="empresa">Empresa</label>
+          <input type="text" name="empresa" id="empresa1">
+
+
+          <div class="data-exp">
+            <label for="ano-in">Ano que ingressou</label>
+            <input type="month" name="ano-in" id="ano-in1">
+
+            <label for="ano-sa">Ano que saiu</label>
+            <input type="month" name="ano-sa" id="ano-sa1">
+          </div>
+        </div>
+
+        <div id="exp2">
+          <label for="cargo">Cargo</label>
+          <input type="text" name="cargo" id="cargo2">
+
+          <label for="empresa">Empresa</label>
+          <input type="text" name="empresa" id="empresa2">
+
+
+          <div class="data-exp">
+            <label for="ano-in">Ano que ingressou</label>
+            <input type="month" name="ano-in" id="ano-in2">
+
+            <label for="ano-sa">Ano que saiu</label>
+            <input type="month" name="ano-sa" id="ano-sa2">
+          </div>
+        </div>
+
+        <div id="exp3">
+          <label for="cargo">Cargo</label>
+          <input type="text" name="cargo" id="cargo3">
+
+          <label for="empresa">Empresa</label>
+          <input type="text" name="empresa" id="empresa3">
+
+
+          <div class="data-exp">
+            <label for="ano-in">Ano que ingressou</label>
+            <input type="month" name="ano-in" id="ano-in3">
+
+            <label for="ano-sa">Ano que saiu</label>
+            <input type="month" name="ano-sa" id="ano-sa3">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="sobre">
+
+        <h2>Fale Sobre Você</h2>
+
+        <textarea name="sobre__text" class="sobre__text" id="sobre__text"></textarea>
+
+      </div>
+
+
+    </form>
+
+  
+  </main>
+
+  <div class="container" id="container">
+    <p>Curriculum Vitae</p>
+
+    <p id="nomeCurriculo">NOME DA PESSOA</p>
+
+    <div id="curriculo__dadospessoais">
+      <p>Dados pessoais:</p>
+
+      <ul>
+        <li id="li__sexo"></li>
+        <li id="li__data">Data de nascimento: </li>
+        <li id="li__local">Local: </li>
+        <li id="li__bairro">Bairro: </li>
+        <li id="li__civil">Estado civil: </li>
+        <li id="li__endereco">Endereço: </li>
+        <li id="li__cep">CEP: </li>
+        <li id="li__celular">Celular: </li>
+        <li id="li__filiacao">Filiação: </li>
+      </ul>
+
+    </div>
+
+    <div class="curriculo__formacao">
+
+      <p>Formação: </p>
+
+      <ul id="formacao__lista">
+
+      </ul>
+
+    </div>
+
+    <div class="curriculo__conhecimentos">
+
+      <p>Conhecimentos e Habilidades:</p>
+
+      <ul id="conhecimentos__lista">
+   
+      </ul>
+
+    </div>
+
+    <div class="curriculo__experiencia">
+
+      <p>Experiência Profissional: </p>
+
+      <div class="curriculo__experiencia1">
+
+        <p>Cargo - Empresa</p>
+        <p>Ano que ingressou - Ano que saiu</p>
+
+      </div>
+
+      <div class="curriculo__experiencia2">
+
+        <p>Cargo - Empresa</p>
+        <p>Ano que ingressou - Ano que saiu</p>
+
+      </div>
+
+      <div class="curriculo__experiencia3">
+
+        <p>Cargo - Empresa</p>
+        <p>Ano que ingressou - Ano que saiu</p>
+
+      </div>
+
+      <div class="curriculo__competencias">
+
+        <p>Competências: </p>
+
+        <ul>
+          
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script type="module" src="js/script.js"></script>
+</body>
+
+</html>
