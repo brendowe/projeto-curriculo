@@ -29,6 +29,8 @@ btnGerar.addEventListener("click", function (event) {
   atualizarDadosPessoais();
   atualizarFormacao();
   atualizarHabilidades();  
+  atualizarExperiencia();
+  atualizarSobreMim();
 });
 
 const checarCep = document.getElementById("checarCep");
@@ -202,7 +204,6 @@ const atualizarHabilidades = () => {
 
   const habilidades = [pessoaGlobal.hab1, pessoaGlobal.hab2, pessoaGlobal.hab3, pessoaGlobal.hab4, pessoaGlobal.hab5];
 
-  console.log(habilidades)
   for (let index = 0; index < habilidades.length; index++) {
     
     if(habilidades[index] != '') {
@@ -244,3 +245,42 @@ const atualizarHabilidades = () => {
     form.innerText = hab5.value;
     conhecimentosLista.appendChild(form);  
   }*/
+const atualizarExperiencia = () => {
+  const curriculoLista = document.getElementById('curriculo__lista');
+  
+
+  if (pessoaGlobal.cargo1 != '' && pessoaGlobal.empresa1 != '' && pessoaGlobal.anoIn1 != '' && pessoaGlobal.anoSa1 != '') {
+    let form = document.createElement('li');
+    form.innerText = `${pessoaGlobal.cargo1} - ${pessoaGlobal.empresa1}
+    ${pessoaGlobal.anoIn1} - ${pessoaGlobal.anoSa1}`;
+    curriculoLista.appendChild(form);
+  }
+
+  if (pessoaGlobal.cargo2 != '' && pessoaGlobal.empresa2 != '' && pessoaGlobal.anoIn2 != '' && pessoaGlobal.anoSa2 != '') {
+    let form = document.createElement('li');
+    form.innerText = `${pessoaGlobal.cargo2} - ${pessoaGlobal.empresa2}
+    ${pessoaGlobal.anoIn2} - ${pessoaGlobal.anoSa2}`;
+    curriculoLista.appendChild(form);
+  }
+
+  if (pessoaGlobal.cargo3 != '' && pessoaGlobal.empresa3 != '' && pessoaGlobal.anoIn3 != '' && pessoaGlobal.anoSa3 != '') {
+    let form = document.createElement('li');
+    form.innerText = `${pessoaGlobal.cargo3} - ${pessoaGlobal.empresa3}
+    ${pessoaGlobal.anoIn3} - ${pessoaGlobal.anoSa3}`;
+    curriculoLista.appendChild(form);
+  }
+
+}
+
+
+const atualizarSobreMim = () => {
+  const sobreMim = document.getElementById('curriculo__sobremim');
+  let form = document.createElement('p');
+
+  console.log(pessoaGlobal.sobreVoce)
+  console.log(typeof(pessoaGlobal.sobreVoce))
+
+  form.innerText = pessoaGlobal.sobreVoce;
+  
+  sobreMim.appendChild(form);
+}
