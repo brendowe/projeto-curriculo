@@ -34,11 +34,12 @@ btnGerar.addEventListener("click", function (event) {
 });
 
 const checarCep = document.getElementById("checarCep");
+const inputCep = document.getElementById("input-cep");
 
 checarCep.addEventListener("click", async function (event) {
   event.preventDefault();
-  const inputCep = document.getElementById("input-cep");
-  const url = `https://viacep.com.br/ws/${inputCep.value}/json/`;
+  const reformado = inputCep.value.replace('-', '');
+  const url = `https://viacep.com.br/ws/${reformado}/json/`;
   const response = await fetch(url);
   const cep = await response.json();
   address(cep);
@@ -55,6 +56,34 @@ function address(cep) {
   cidade.value = cep.localidade;
   estado.value = cep.uf;
 }
+
+//MASCARAS
+
+inputCep.addEventListener('keypress', () => {
+  if(inputCep.value.length == 5) {
+    inputCep.value += '-';
+  }
+})
+
+
+celular.addEventListener('keypress', () => {
+  if(celular.value.length == 0) {
+    celular.value += '('
+  }
+
+  if(celular.value.length == 3) {
+    celular.value += ') '  
+  }
+
+  if(celular.value.length == 6) {
+    celular.value += ' '  
+  }
+
+  if(celular.value.length == 11) {
+    celular.value += '-'  
+  }
+  
+})
 
 const dados = () => {
   const nomeCompleto = document.getElementById("nome-completo");
@@ -111,7 +140,7 @@ const dados = () => {
     const pessoa = {
       nome: nomeCompleto.value,
       sexo: sexo.value,
-      nascimento: dataNasc.value,
+      nascimento: dataNasc.value.split('-'),
       civil: estadoCivil.value,
       mae: mae.value,
       pai: pai.value,
@@ -174,13 +203,13 @@ const atualizarDadosPessoais = () => {
 
   nomeCurriculo.innerText = pessoaGlobal.nome;
   liSexo.innerText = "Sexo: " + pessoaGlobal.sexo;
-  liData.innerText = "Data de nascimento: " + pessoaGlobal.nascimento;
+  liData.innerText = "Data de nascimento: " + pessoaGlobal.nascimento[2] +'/' + pessoaGlobal.nascimento[1] + '/' + pessoaGlobal.nascimento[0];
   liLocal.innerText =
-    "Local: " + pessoaGlobal.cidade + " / " + pessoaGlobal.estado;
+    "Local: " + pessoaGlobal.cidade + pessoaGlobal.estado;
   liBairro.innerText = "Bairro: " + pessoaGlobal.bairro;
   liCivil.innerText = "Estado Civil: " + pessoaGlobal.civil;
   liEndereco.innerText = "Endereço: " + pessoaGlobal.endereco;
-  liCep.innerText = "CEP :" + pessoaGlobal.cep;
+  liCep.innerText = "CEP: " + pessoaGlobal.cep;
   liCelular.innerText = "Celular: " + pessoaGlobal.celular;
   liFiliacao.innerText =
     "Filiação: " + pessoaGlobal.mae + " e " + pessoaGlobal.pai;
@@ -276,9 +305,6 @@ const atualizarExperiencia = () => {
 const atualizarSobreMim = () => {
   const sobreMim = document.getElementById('curriculo__sobremim');
   let form = document.createElement('p');
-
-  console.log(pessoaGlobal.sobreVoce)
-  console.log(typeof(pessoaGlobal.sobreVoce))
 
   form.innerText = pessoaGlobal.sobreVoce;
   
