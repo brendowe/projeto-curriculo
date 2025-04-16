@@ -28,9 +28,12 @@ btnGerar.addEventListener("click", function (event) {
   mudarTela();
   atualizarDadosPessoais();
   atualizarFormacao();
-  atualizarHabilidades();  
+  atualizarHabilidades();
   atualizarExperiencia();
   atualizarSobreMim();
+  gerarPDF();
+  console.log(pessoaGlobal.anoIn1);
+  console.log(pessoaGlobal.anoSa1);
 });
 
 const checarCep = document.getElementById("checarCep");
@@ -38,7 +41,7 @@ const inputCep = document.getElementById("input-cep");
 
 checarCep.addEventListener("click", async function (event) {
   event.preventDefault();
-  const reformado = inputCep.value.replace('-', '');
+  const reformado = inputCep.value.replace("-", "");
   const url = `https://viacep.com.br/ws/${reformado}/json/`;
   const response = await fetch(url);
   const cep = await response.json();
@@ -59,31 +62,29 @@ function address(cep) {
 
 //MASCARAS
 
-inputCep.addEventListener('keypress', () => {
-  if(inputCep.value.length == 5) {
-    inputCep.value += '-';
+inputCep.addEventListener("keypress", () => {
+  if (inputCep.value.length == 5) {
+    inputCep.value += "-";
   }
-})
+});
 
-
-celular.addEventListener('keypress', () => {
-  if(celular.value.length == 0) {
-    celular.value += '('
-  }
-
-  if(celular.value.length == 3) {
-    celular.value += ') '  
+celular.addEventListener("keypress", () => {
+  if (celular.value.length == 0) {
+    celular.value += "(";
   }
 
-  if(celular.value.length == 6) {
-    celular.value += ' '  
+  if (celular.value.length == 3) {
+    celular.value += ") ";
   }
 
-  if(celular.value.length == 11) {
-    celular.value += '-'  
+  if (celular.value.length == 6) {
+    celular.value += " ";
   }
-  
-})
+
+  if (celular.value.length == 11) {
+    celular.value += "-";
+  }
+});
 
 const dados = () => {
   const nomeCompleto = document.getElementById("nome-completo");
@@ -140,7 +141,7 @@ const dados = () => {
     const pessoa = {
       nome: nomeCompleto.value,
       sexo: sexo.value,
-      nascimento: dataNasc.value.split('-'),
+      nascimento: dataNasc.value.split("-"),
       civil: estadoCivil.value,
       mae: mae.value,
       pai: pai.value,
@@ -166,12 +167,12 @@ const dados = () => {
       empresa1: empresa1.value,
       empresa2: empresa2.value,
       empresa3: empresa3.value,
-      anoIn1: anoIn1.value,
-      anoIn2: anoIn2.value,
-      anoIn3: anoIn3.value,
-      anoSa1: anoSa1.value,
-      anoSa2: anoSa2.value,
-      anoSa3: anoSa3.value,
+      anoIn1: anoIn1.value.split("-"),
+      anoIn2: anoIn2.value.split("-"),
+      anoIn3: anoIn3.value.split("-"),
+      anoSa1: anoSa1.value.split("-"),
+      anoSa2: anoSa2.value.split("-"),
+      anoSa3: anoSa3.value.split("-"),
       sobreVoce: sobreVoce.value,
     };
 
@@ -186,7 +187,7 @@ const mudarTela = () => {
   const container = document.getElementById("container");
 
   container.style.display = "block";
-  main.style.display = "none";  
+  main.style.display = "none";
 };
 
 const atualizarDadosPessoais = () => {
@@ -203,9 +204,14 @@ const atualizarDadosPessoais = () => {
 
   nomeCurriculo.innerText = pessoaGlobal.nome;
   liSexo.innerText = "Sexo: " + pessoaGlobal.sexo;
-  liData.innerText = "Data de nascimento: " + pessoaGlobal.nascimento[2] +'/' + pessoaGlobal.nascimento[1] + '/' + pessoaGlobal.nascimento[0];
-  liLocal.innerText =
-    "Local: " + pessoaGlobal.cidade + pessoaGlobal.estado;
+  liData.innerText =
+    "Data de nascimento: " +
+    pessoaGlobal.nascimento[2] +
+    "/" +
+    pessoaGlobal.nascimento[1] +
+    "/" +
+    pessoaGlobal.nascimento[0];
+  liLocal.innerText = `Local: ${pessoaGlobal.cidade} / ${pessoaGlobal.estado}`;
   liBairro.innerText = "Bairro: " + pessoaGlobal.bairro;
   liCivil.innerText = "Estado Civil: " + pessoaGlobal.civil;
   liEndereco.innerText = "Endereço: " + pessoaGlobal.endereco;
@@ -219,30 +225,41 @@ const atualizarFormacao = () => {
   const formacaoLista = document.getElementById("formacao__lista");
   let form = document.createElement("li");
 
-  if (pessoaGlobal.formacao == "Ensino Fundamental" || pessoaGlobal.formacao == "Ensino Médio") {
-    form.innerText = 'Ensino Médio Completo - ' + escola.value;    
+  if (
+    pessoaGlobal.formacao == "Ensino Fundamental" ||
+    pessoaGlobal.formacao == "Ensino Médio"
+  ) {
+    form.innerText = "Ensino Médio Completo - " + escola.value;
     formacaoLista.appendChild(form);
-  } else if (pessoaGlobal.formacao == "Ensino Superior" || pessoaGlobal.formacao == "Cursando") {
-    form.innerText = 'Superior - ' + pessoaGlobal.curso +' pela ' + facul.value;
+  } else if (
+    pessoaGlobal.formacao == "Ensino Superior" ||
+    pessoaGlobal.formacao == "Cursando"
+  ) {
+    form.innerText =
+      "Superior - " + pessoaGlobal.curso + " pela " + facul.value;
     formacaoLista.appendChild(form);
   }
 };
 
 const atualizarHabilidades = () => {
-  const conhecimentosLista = document.getElementById("conhecimentos__lista");   
+  const conhecimentosLista = document.getElementById("conhecimentos__lista");
 
-  const habilidades = [pessoaGlobal.hab1, pessoaGlobal.hab2, pessoaGlobal.hab3, pessoaGlobal.hab4, pessoaGlobal.hab5];
+  const habilidades = [
+    pessoaGlobal.hab1,
+    pessoaGlobal.hab2,
+    pessoaGlobal.hab3,
+    pessoaGlobal.hab4,
+    pessoaGlobal.hab5,
+  ];
 
   for (let index = 0; index < habilidades.length; index++) {
-    
-    if(habilidades[index] != '') {
+    if (habilidades[index] != "") {
       let form = document.createElement("li");
       form.innerText = habilidades[index];
       conhecimentosLista.appendChild(form);
-    }  
-
-  }; 
-}
+    }
+  }
+};
 
 /*
   if(hab1.value.length > 0) {
@@ -275,38 +292,78 @@ const atualizarHabilidades = () => {
     conhecimentosLista.appendChild(form);  
   }*/
 const atualizarExperiencia = () => {
-  const curriculoLista = document.getElementById('curriculo__lista');
-  
+  const curriculoLista = document.getElementById("curriculo__lista");
 
-  if (pessoaGlobal.cargo1 != '' && pessoaGlobal.empresa1 != '' && pessoaGlobal.anoIn1 != '' && pessoaGlobal.anoSa1 != '') {
-    let form = document.createElement('li');
+  if (
+    pessoaGlobal.cargo1 != "" &&
+    pessoaGlobal.empresa1 != "" &&
+    pessoaGlobal.anoIn1 != "" &&
+    pessoaGlobal.anoSa1 != ""
+  ) {
+    let form = document.createElement("li");
     form.innerText = `${pessoaGlobal.cargo1} - ${pessoaGlobal.empresa1}
-    ${pessoaGlobal.anoIn1} - ${pessoaGlobal.anoSa1}`;
+    ${pessoaGlobal.anoIn1[1]}/${pessoaGlobal.anoIn1[0]} - ${pessoaGlobal.anoSa1[1]}/${pessoaGlobal.anoSa1[0]}`;
     curriculoLista.appendChild(form);
   }
 
-  if (pessoaGlobal.cargo2 != '' && pessoaGlobal.empresa2 != '' && pessoaGlobal.anoIn2 != '' && pessoaGlobal.anoSa2 != '') {
-    let form = document.createElement('li');
+  if (
+    pessoaGlobal.cargo2 != "" &&
+    pessoaGlobal.empresa2 != "" &&
+    pessoaGlobal.anoIn2 != "" &&
+    pessoaGlobal.anoSa2 != ""
+  ) {
+    let form = document.createElement("li");
     form.innerText = `${pessoaGlobal.cargo2} - ${pessoaGlobal.empresa2}
     ${pessoaGlobal.anoIn2} - ${pessoaGlobal.anoSa2}`;
     curriculoLista.appendChild(form);
   }
 
-  if (pessoaGlobal.cargo3 != '' && pessoaGlobal.empresa3 != '' && pessoaGlobal.anoIn3 != '' && pessoaGlobal.anoSa3 != '') {
-    let form = document.createElement('li');
+  if (
+    pessoaGlobal.cargo3 != "" &&
+    pessoaGlobal.empresa3 != "" &&
+    pessoaGlobal.anoIn3 != "" &&
+    pessoaGlobal.anoSa3 != ""
+  ) {
+    let form = document.createElement("li");
     form.innerText = `${pessoaGlobal.cargo3} - ${pessoaGlobal.empresa3}
     ${pessoaGlobal.anoIn3} - ${pessoaGlobal.anoSa3}`;
     curriculoLista.appendChild(form);
   }
-
-}
-
+};
 
 const atualizarSobreMim = () => {
-  const sobreMim = document.getElementById('curriculo__sobremim');
-  let form = document.createElement('p');
+  const sobreMim = document.getElementById("curriculo__sobremim");
+  let form = document.createElement("p");
 
   form.innerText = pessoaGlobal.sobreVoce;
-  
+
   sobreMim.appendChild(form);
+};
+
+/*const gerarPDF = () => {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF("p", "mm", "a4");
+
+  doc.html(document.body, {
+    callback: function (doc) {
+      doc.save("meu-pdf.pdf");
+    }
+  });
+};*/
+
+function gerarPDF() {
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF({
+    format: "a4",
+    orientation: "portrait",
+    unit: "mm",
+  });
+
+  pdf.html(document.body, {
+    callback: function (pdf) {
+      pdf.save("output.pdf");
+    },
+    width: 210, //define o tamanho do pdf - a4
+    windowWidth: 1080,
+  });
 }

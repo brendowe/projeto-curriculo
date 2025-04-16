@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: yellowgreen;
+  background-color: white;
 }
 
 main {
@@ -65,9 +65,20 @@ div input {
 .container {
   display: none;
   text-align: left;
-  font-size: 40px;
+  font-size: 28px;
   width: 90%;
   margin: 0 auto;
 }
 
+.curriculum {
+  font-size: 40px;
+}
+
+.curriculum, .nomeCurriculum {
+  text-align: center;
+}
+
+#curriculo__sobremim {
+  width: 100%;
+}
 

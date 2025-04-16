@@ -47,10 +47,10 @@
         <div>
           <label for="estado-civil">Estado Civil: </label> <br>
           <select name="estado-civil" id="estado-civil">
-            <option value="solteiro">Solteiro</option>
-            <option value="casado">Casado</option>
-            <option value="viuvo">Viuvo</option>
-            <option value="divorciado">Divorciado</option>
+            <option value="Solteiro">Solteiro</option>
+            <option value="Casado">Casado</option>
+            <option value="Viuvo">Viuvo</option>
+            <option value="Divorciado">Divorciado</option>
           </select>
         </div>
 
@@ -211,9 +211,9 @@
   </main>
 
   <div class="container" id="container">
-    <p>Curriculum Vitae</p>
+    <p class="curriculum">Curriculum Vitae</p>
 
-    <p id="nomeCurriculo">NOME DA PESSOA</p>
+    <p id="nomeCurriculo" class="nomeCurriculum">NOME DA PESSOA</p>
 
     <div id="curriculo__dadospessoais">
       <p>Dados pessoais:</p>
@@ -272,6 +272,9 @@
 
   </div>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script type="module" src="js/script.js" defer></script>
 </body>
 
