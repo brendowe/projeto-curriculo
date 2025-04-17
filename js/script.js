@@ -364,6 +364,8 @@ function gerarPDF() {
       pdf.save("output.pdf");
     },
     width: 210, //define o tamanho do pdf - a4
-    windowWidth: 1080,
+    windowWidth: window.innerWidth,
   });
 }
+
+//windowWidth: 1080
