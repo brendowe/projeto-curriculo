@@ -65,7 +65,7 @@ div input {
 .container {
   display: none;
   text-align: left;
-  font-size: 28px;
+  font-size: 26px;
   width: 90%;
   margin: 0 auto;
 }
@@ -76,6 +76,10 @@ div input {
 
 .curriculum, .nomeCurriculum {
   text-align: center;
+}
+
+.nomeCurriculum {
+  font-size: 30px;
 }
 
 #curriculo__sobremim {
