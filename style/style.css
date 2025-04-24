@@ -68,10 +68,11 @@ div input {
   font-size: 26px;
   width: 90%;
   margin: 0 auto;
+  padding-top: 2rem;
 }
 
 .curriculum {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .curriculum, .nomeCurriculum {
@@ -85,4 +86,6 @@ div input {
 #curriculo__sobremim {
   width: 100%;
 }
+
+
 

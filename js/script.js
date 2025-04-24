@@ -359,13 +359,11 @@ function gerarPDF() {
     unit: "mm",
   });
 
-  pdf.html(document.body, {
+  pdf.html(container, {
     callback: function (pdf) {
       pdf.save("output.pdf");
     },
     width: 210, //define o tamanho do pdf - a4
-    windowWidth: window.innerWidth,
+    windowWidth: 1080,
   });
 }
-
-//windowWidth: 1080
