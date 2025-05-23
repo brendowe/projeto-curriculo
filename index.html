@@ -1,274 +1,355 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculo</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Curriculo</title>
-  <link rel="stylesheet" href="style/style.css">
-</head>
+  <body>
+    <main id="principal">
+      <h1>Curriculo</h1>
 
-<body>
-  <main id="main">
-    <h1>Curriculo</h1>
+      <form action="">
+        <div class="secao-dados-pessoais bloco-padrao gap-1rem">
+          <h2>Dados Pessoais</h2>
 
+          <div class="bloco-padrao">
+            <label for="nome-completo">Nome Completo:</label><br />
+            <input
+              type="text"
+              name="nome-completo"
+              id="nome-completo"
+              class="input-padrao"
+            />
+          </div>
 
-    <form action="">
+          <div class="campo-sexo bloco-padrao" id="campo-sexo">
+            <label for="area-sexo">Sexo:</label>
 
-      <div id="area-dados-pessoais">
-        <h2>Dados Pessoais</h2>
-
-        <button type="submit" id="gerar">GERAR</button>
-
-        <div>
-          <label for="nome-completo">Nome Completo: </label> <br>
-          <input type="text" name="nome-completo" id="nome-completo" />
-        </div>
-
-        <div id="in-sexo">
-          <label for="area-sexo">Sexo:</label>
-          <div id="area-sexo">
-            <div>
-              <label for="sexo-m">Masculino</label>
-              <input type="radio" name="sexo" id="sexo-m" value="Masculino" />
+            <div class="area-sexo" id="area-sexo">
+              <div>
+                <label for="sexo-m">Masculino</label>
+                <input type="radio" name="sexo" id="sexo-m" value="Masculino" />
+              </div>
+              <div>
+                <label for="sexo-f">Feminino</label>
+                <input type="radio" name="sexo" id="sexo-f" value="Feminino" />
+              </div>
             </div>
-            <div>
-              <label for="sexo-f">Feminino</label>
-              <input type="radio" name="sexo" id="sexo-f" value="Feminino" />
+          </div>
+
+          <div class="bloco-padrao">
+            <label for="data-nascimento">Data de Nascimento:</label> <br />
+            <input
+              type="date"
+              name="data-nascimento"
+              id="data-nascimento"
+              class="input-padrao"
+            />
+          </div>
+
+          <div class="bloco-padrao">
+            <label for="estado-civil">Estado Civil:</label><br />
+            <select name="estado-civil" id="estado-civil" class="input-padrao">
+              <option value="Solteiro">Solteiro</option>
+              <option value="Casado">Casado</option>
+              <option value="Viúvo">Viúvo</option>
+              <option value="Divorciado">Divorciado</option>
+            </select>
+          </div>
+
+          <div class="bloco-padrao">
+            <label for="cep">CEP:</label>
+            <button id="botao-buscar-cep" class="botao-buscar-cep">
+              Buscar
+            </button>
+            <input type="text" name="cep" id="cep" class="input-padrao" />
+          </div>
+
+          <div class="bloco-padrao">
+            <label for="endereco">Endereço:</label>
+            <input
+              type="text"
+              name="endereco"
+              id="endereco"
+              class="input-padrao"
+            />
+          </div>
+
+          <div class="bloco-padrao">
+            <label for="bairro">Bairro:</label><br />
+            <input type="text" name="bairro" id="bairro" class="input-padrao" />
+          </div>
+
+          <div class="bloco-padrao">
+            <label for="cidade">Cidade: </label><br />
+            <input type="text" name="cidade" id="cidade" class="input-padrao" />
+          </div>
+
+          <div class="bloco-padrao">
+            <label for="estado">Estado: </label><br />
+            <input type="text" name="estado" id="estado" class="input-padrao" />
+          </div>
+
+          <div class="bloco-padrao">
+            <label for="complemento">Complemento: </label><br />
+            <input
+              type="text"
+              name="complemento"
+              id="complemento"
+              class="input-padrao"
+            />
+          </div>
+
+          <div class="bloco-padrao">
+            <label for="nome-pai">Nome do Pai:</label><br />
+            <input
+              type="text"
+              name="nome-pai"
+              id="nome-pai"
+              class="input-padrao"
+            /><br />
+            <label for="nome-mae">Nome da Mãe:</label><br />
+            <input
+              type="text"
+              name="nome-mae"
+              id="nome-mae"
+              class="input-padrao"
+            /><br />
+            <label for="celular">Celular:</label><br />
+            <input
+              type="text"
+              name="celular"
+              id="celular"
+              class="input-padrao"
+            />
+          </div>
+        </div>
+
+        <div id="area-formacao" class="area-formacao bloco-padrao">
+          <h2>Formação</h2>
+
+          <div class="bloco-padrao">
+            <select name="formacao" id="formacao" class="input-padrao">
+              <option value="Ensino Fundamental">Fundamental Completo</option>
+              <option value="Ensino Médio">Médio Completo</option>
+              <option value="Ensino Superior">Superior Completo</option>
+              <option value="Cursando">Superior em Curso</option>
+            </select>
+          </div>
+
+          <br />
+
+          <div class="campo-escola bloco-padrao" id="campo-escola">
+            <label for="escola">Escola:</label>
+            <input type="text" name="escola" id="escola" class="input-padrao" />
+          </div>
+
+          <div
+            class="campo-faculdade--desativado bloco-padrao"
+            id="campo-faculdade"
+          >
+            <label for="curso">Curso:</label>
+            <input type="text" name="curso" id="curso" class="input-padrao" />
+
+            <label for="faculdade">Faculdade:</label>
+            <input
+              type="text"
+              name="faculdade"
+              id="faculdade"
+              class="input-padrao"
+            />
+          </div>
+        </div>
+
+        <div id="secao-habilidades" class="secao-habilidades bloco-padrao">
+          <h2>Conhecimentos e Habilidades</h2>
+
+          <div class="bloco-padrao gap-1rem">
+            <input type="text" name="hab1" id="hab1" class="input-padrao" />
+            <input type="text" name="hab2" id="hab2" class="input-padrao" />
+            <input type="text" name="hab3" id="hab3" class="input-padrao" />
+            <input type="text" name="hab4" id="hab4" class="input-padrao" />
+            <input type="text" name="hab5" id="hab5" class="input-padrao" />
+          </div>
+        </div>
+
+        <div class="secao-experiencia bloco-padrao">
+          <h2>Experiência Profissional</h2>
+
+          <div id="exp1" class="bloco-padrao gap-1rem">
+            <label for="cargo">Cargo</label>
+            <input type="text" name="cargo" id="cargo1" class="input-padrao" />
+
+            <label for="empresa">Empresa</label>
+            <input
+              type="text"
+              name="empresa"
+              id="empresa1"
+              class="input-padrao"
+            />
+
+            <div class="data-exp">
+              <div>
+                <label for="ano-in">Início</label>
+                <input
+                  type="month"
+                  name="ano-in"
+                  id="ano-in1"
+                  class="input-padrao"
+                />
+              </div>
+
+              <div>
+                <label for="ano-sa">Término</label>
+                <input
+                  type="month"
+                  name="ano-sa"
+                  id="ano-sa1"
+                  class="input-padrao"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div id="exp2" class="bloco-padrao gap-1rem">
+            <label for="cargo">Cargo</label>
+            <input type="text" name="cargo" id="cargo2" class="input-padrao" />
+
+            <label for="empresa">Empresa</label>
+            <input
+              type="text"
+              name="empresa"
+              id="empresa2"
+              class="input-padrao"
+            />
+
+            <div class="data-exp">
+              <div>
+                <label for="ano-in">Início</label>
+                <input
+                  type="month"
+                  name="ano-in"
+                  id="ano-in2"
+                  class="input-padrao"
+                />
+              </div>
+
+              <div>
+                <label for="ano-sa">Término</label>
+                <input
+                  type="month"
+                  name="ano-sa"
+                  id="ano-sa2"
+                  class="input-padrao"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div id="exp3" class="bloco-padrao gap-1rem">
+            <label for="cargo">Cargo</label>
+            <input type="text" name="cargo" id="cargo3" class="input-padrao" />
+
+            <label for="empresa">Empresa</label>
+            <input
+              type="text"
+              name="empresa"
+              id="empresa3"
+              class="input-padrao"
+            />
+
+            <div class="data-exp">
+              <div>
+                <label for="ano-in">Início</label>
+                <input
+                  type="month"
+                  name="ano-in"
+                  id="ano-in3"
+                  class="input-padrao"
+                />
+              </div>
+
+              <div>
+                <label for="ano-sa">Término</label>
+                <input
+                  type="month"
+                  name="ano-sa"
+                  id="ano-sa3"
+                  class="input-padrao"
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        <div>
-          <label for="data-nascimento">Data de Nascimento:</label>
-          <input type="date" name="data-nascimento" id="data-nascimento" />
-        </div>
-
-        <div>
-          <label for="estado-civil">Estado Civil: </label> <br>
-          <select name="estado-civil" id="estado-civil">
-            <option value="Solteiro">Solteiro</option>
-            <option value="Casado">Casado</option>
-            <option value="Viuvo">Viuvo</option>
-            <option value="Divorciado">Divorciado</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="cep">CEP: </label> <button id="checarCep">Buscar</button>
-          <input type="text" name="cep" id="input-cep">
-        </div>
-
-        <div>
-          <label for="endereco">Endereço: </label> <br>
-          <input type="text" name="endereco" id="endereco">
-
-          <div>
-            <label for="bairro">Bairro: </label><br>
-            <input type="text" name="bairro" id="bairro">
-          </div>
-          <div>
-            <label for="cidade">Cidade: </label><br>
-            <input type="text" name="cidade" id="cidade">
-          </div>
-          <div>
-            <label for="estado">Estado: </label><br>
-            <input type="text" name="estado" id="estado">
-          </div>
-          <div>
-            <label for="complemento">Complemento: </label><br>
-            <input type="text" name="complemento" id="complemento">
-          </div>
-          <div>
-            Filiação:
-            <p>
-              <label for="nome-pai">Nome do Pai: </label> <br>
-              <input type="text" name="nome-pai" id="nome-pai">
-              <br>
-              <label for="nome-mae">Nome da Mãe: </label> <br>
-              <input type="text" name="nome-mae" id="nome-mae">
-            </p>
-            </p>
-            <p>
-              <label for="celular">Celular: </label><br>
-              <input type="text" name="celular" id="celular">
+        <div class="bloco-padrao">
+          <h2>Fale Sobre Você</h2>
+          <div class="bloco-padrao">
+            <textarea
+              name="texto-sobre"
+              id="texto-sobre"
+              class="texto-sobre"
+            ></textarea>
           </div>
         </div>
+        <button type="button" id="botao-gerar" class="botao-gerar">
+          Gerar
+        </button>
+      </form>
+    </main>
+
+    <!--AQUI COMEÇA O CURRICULO GERADO EM PDF-->
+    <div class="curriculo-gerado" id="curriculo-gerado">
+      <p class="titulo-curriculo">Curriculum Vitae</p>
+
+      <p id="nome-curriculo" class="nome-curriculo">
+        <strong>NOME DA PESSOA</strong>
+      </p>
+
+      <div id="dados-pessoais-curriculo">
+        <p><strong>Dados pessoais:</strong></p>
+
+        <ul>
+          <li id="info-sexo"></li>
+          <li id="info-nascimento">Data de nascimento:</li>
+          <li id="info-local">Local:</li>
+          <li id="info-bairro">Bairro:</li>
+          <li id="info-estado-civil">Estado civil:</li>
+          <li id="info-endereco">Endereço:</li>
+          <li id="info-cep">CEP:</li>
+          <li id="info-celular">Celular:</li>
+          <li id="info-filiacao">Filiação:</li>
+        </ul>
       </div>
 
+      <div class="formacao-curriculo">
+        <p><strong>Formação:</strong></p>
 
-      <div id="area-formacao">
-
-        <h2>Formação</h2>
-
-        <select name="formacao" id="formacao">
-          <option value="Ensino Fundamental">Fundamental Completo</option>
-          <option value="Ensino Médio">Médio Completo</option>
-          <option value="Ensino Superior">Superior Completo</option>
-          <option value="Cursando">Superior em Curso</option>
-        </select>
-
-        <br>
-
-        <div id="escola-area">
-          <label for="escolaFacul">Escola:</label>
-          <input type="text" name="escolaFacul" id="escola">
-
-        </div>
-
-        <div id="facul-area">
-          <label for="curso">Curso:</label>
-          <input type="text" name="curso" id="curso">
-
-          <label for="escolaFacul">Faculdade:</label>
-          <input type="text" name="escolaFacul" id="facul">
-        </div>
-
+        <ul id="lista-formacao"></ul>
       </div>
 
-      <div id="habilidade-area">
+      <div class="habilidades-curriculo">
+        <p><strong>Conhecimentos e Habilidades:</strong></p>
 
-        <h2>Conhecimentos e Habilidades</h2>
-
-        <input type="text" name="hab1" id="hab1">
-        <input type="text" name="hab2" id="hab2">
-        <input type="text" name="hab3" id="hab3">
-        <input type="text" name="hab4" id="hab4">
-        <input type="text" name="hab5" id="hab5">
-
+        <ul id="lista-habilidades"></ul>
       </div>
 
-      <div id="experiencia-area">
+      <div class="experiencia-curriculo">
+        <p><strong>Experiência Profissional:</strong></p>
 
-        <h2>Experiência Profissional</h2>
+        <ul id="lista-experiencia"></ul>
 
-
-        <div id="exp1">
-          <label for="cargo">Cargo</label>
-          <input type="text" name="cargo" id="cargo1">
-
-          <label for="empresa">Empresa</label>
-          <input type="text" name="empresa" id="empresa1">
-
-
-          <div class="data-exp">
-            <label for="ano-in">Ano que ingressou</label>
-            <input type="month" name="ano-in" id="ano-in1">
-
-            <label for="ano-sa">Ano que saiu</label>
-            <input type="month" name="ano-sa" id="ano-sa1">
-          </div>
+        <div id="sobre-mim-curriculo" class="sobre-mim-curriculo">
+          <p><strong>Sobre mim:</strong></p>
         </div>
-
-        <div id="exp2">
-          <label for="cargo">Cargo</label>
-          <input type="text" name="cargo" id="cargo2">
-
-          <label for="empresa">Empresa</label>
-          <input type="text" name="empresa" id="empresa2">
-
-
-          <div class="data-exp">
-            <label for="ano-in">Ano que ingressou</label>
-            <input type="month" name="ano-in" id="ano-in2">
-
-            <label for="ano-sa">Ano que saiu</label>
-            <input type="month" name="ano-sa" id="ano-sa2">
-          </div>
-        </div>
-
-        <div id="exp3">
-          <label for="cargo">Cargo</label>
-          <input type="text" name="cargo" id="cargo3">
-
-          <label for="empresa">Empresa</label>
-          <input type="text" name="empresa" id="empresa3">
-
-
-          <div class="data-exp">
-            <label for="ano-in">Ano que ingressou</label>
-            <input type="month" name="ano-in" id="ano-in3">
-
-            <label for="ano-sa">Ano que saiu</label>
-            <input type="month" name="ano-sa" id="ano-sa3">
-          </div>
-        </div>
-
-      </div>
-
-      <div class="sobre">
-
-        <h2>Fale Sobre Você</h2>
-
-        <textarea name="sobre__text" class="sobre__text" id="sobre__text"></textarea>
-
-      </div>
-
-
-    </form>
-
-  
-  </main>
-
-  <div class="container" id="container">
-    <p class="curriculum">Curriculum Vitae</p>
-
-    <p id="nomeCurriculo" class="nomeCurriculum"><strong>NOME DA PESSOA</strong></p>
-
-    <div id="curriculo__dadospessoais">
-      <p><strong>Dados pessoais:</strong></p>
-
-      <ul>
-        <li id="li__sexo"></li>
-        <li id="li__data">Data de nascimento: </li>
-        <li id="li__local">Local: </li>
-        <li id="li__bairro">Bairro: </li>
-        <li id="li__civil">Estado civil: </li>
-        <li id="li__endereco">Endereço: </li>
-        <li id="li__cep">CEP: </li>
-        <li id="li__celular">Celular: </li>
-        <li id="li__filiacao">Filiação: </li>
-      </ul>
-
-    </div>
-
-    <div class="curriculo__formacao">
-
-      <p><strong>Formação:</strong> </p>
-
-      <ul id="formacao__lista">
-
-      </ul>
-
-    </div>
-
-    <div class="curriculo__conhecimentos">
-
-      <p><strong>Conhecimentos e Habilidades:</strong></p>
-
-      <ul id="conhecimentos__lista">
-   
-      </ul>
-
-    </div>
-
-    <div class="curriculo__experiencia">
-
-      <p><strong>Experiência Profissional:</strong> </p>
-
-      <ul id="curriculo__lista">
-
-      </ul>
-
-
-      <div id="curriculo__sobremim">
-        <p><strong>Sobre mim:</strong></p>
       </div>
     </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script type="module" src="js/script.js" defer></script>
-</body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script type="module" src="script/main.js" defer></script>
+  </body>
 </html>
