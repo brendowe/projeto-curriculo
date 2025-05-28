@@ -5,23 +5,29 @@
 :root {
   --cor1: #1304ee8a;
   --cor2: rgba(255, 255, 255, 0.986);
+  --cor-fundo: #f0fdf4;
+  --cor-texto-principal: #1f2937;
+  --cor-campo-input: #d1fae5;
+  --cor-borda-ativa: #34d399;
+  --cor-botao: #10b981;
+  --cor-botao-hover: #059669;
 }
 
 body {
   display: flex;
   justify-content: center;
+  color: var(--cor-texto-principal);
 }
 
 main {
-  background-color: var(--cor1);
+  background-color: var(--cor-fundo);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
-  max-width: 900px;
+  width: 1000px;
 }
 
 form {
@@ -44,6 +50,7 @@ label {
   display: block;
   font-size: 1rem;
   font-weight: bolder;
+  padding: 1rem 0;
 }
 
 .input-padrao {
@@ -52,9 +59,11 @@ label {
   font-size: 1rem;
   border-radius: 10px;
   border: none;
+  background-color: var(--cor-campo-input);
 }
 
-.bloco-padrao {
+.bloco-padrao,
+.bloco-padrao-pai {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,10 +72,6 @@ label {
 
 .bloco-padrao label {
   align-self: flex-start;
-}
-
-.gap-1rem {
-  gap: 1rem;
 }
 
 .area-sexo {
@@ -109,6 +114,10 @@ label {
   display: none;
 }
 
+.secao-habilidades div {
+  gap: 2rem;
+}
+
 .secao-experiencia {
   gap: 3rem;
 }
@@ -135,6 +144,7 @@ label {
 
 .texto-sobre {
   border-radius: 10px;
+  background-color: var(--cor-campo-input);
 }
 
 .botao-gerar {
@@ -145,9 +155,13 @@ label {
   margin: 2rem;
   border-radius: 10px;
   border: none;
-  background-color: var(--cor2);
-  color: var(--cor1);
+  background-color: var(--cor-botao);
+  color: white;
   font-weight: bolder;
+}
+
+.botao-gerar:hover {
+  background-color: var(--cor-botao-hover);
 }
 
 /*AQUI COMEÇA O CÓDIGO REFERENTE AO CURRICULO GERADO*/

@@ -1,0 +1,47 @@
+main {
+  width: 1400px;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+.bloco-padrao-pai {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.bloco-padrao-pai > input {
+  width: 40%;
+}
+
+.bloco-padrao {
+  width: 40%;
+}
+
+.secao-dados-pessoais {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.secao-dados-pessoais > :first-child  {
+    width: 60%;
+}
+
+.area-formacao {
+  align-items: flex-start;
+}
+
+.data-exp .input-padrao {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.texto-sobre {
+    width: 60%;
+    height: 200px;
+    font-size: 1.4rem;
+}
