@@ -3,7 +3,7 @@ main {
 }
 
 label {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .bloco-padrao-pai {
@@ -27,8 +27,13 @@ label {
   flex-flow: row wrap;
 }
 
-.secao-dados-pessoais > :first-child  {
-    width: 60%;
+.secao-dados-pessoais > :first-child {
+  width: 60%;
+}
+
+.area-sexo input {
+  height: 2rem;
+
 }
 
 .area-formacao {
@@ -36,12 +41,12 @@ label {
 }
 
 .data-exp .input-padrao {
-    font-size: 1.4rem;
-    text-align: center;
+  font-size: 1.4rem;
+  text-align: center;
 }
 
 .texto-sobre {
-    width: 60%;
-    height: 200px;
-    font-size: 1.4rem;
+  width: 60%;
+  height: 200px;
+  font-size: 1.4rem;
 }

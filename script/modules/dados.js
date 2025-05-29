@@ -34,7 +34,7 @@ export const dados = () => {
   const anoSa2 = document.getElementById("ano-sa2");
   const anoSa3 = document.getElementById("ano-sa3");
   const sobreVoce = document.getElementById("texto-sobre");
-
+  const atual = document.getElementById('atual');
   if (!nomeCompleto.value) {
     return "Preencha os campos";
   } else {
@@ -72,7 +72,8 @@ export const dados = () => {
       anoIn3: anoIn3.value.split("-"),
       anoSa1: anoSa1.value.split("-"),
       anoSa2: anoSa2.value.split("-"),
-      anoSa3: anoSa3.value.split("-"),
+      anoSa3: atual.checked ? null : anoSa3.value.split("-"),
+      atual: atual.checked,      
       sobreVoce: sobreVoce.value,
     };
 
