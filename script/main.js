@@ -22,7 +22,7 @@ const btnGerar = document
     const pessoa = dados();
     pessoaGlobal = pessoa;
 
-    if (form.c) {
+    if (form.checkValidity()) {
       dados();
       mudarTela();
       atualizarDadosPessoais();
