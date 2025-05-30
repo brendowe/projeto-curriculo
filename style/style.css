@@ -154,6 +154,8 @@ label {
 .texto-sobre {
   border-radius: 10px;
   background-color: var(--cor-campo-input);
+  width: 60%;
+  
 }
 
 .botao-gerar {

@@ -9,39 +9,27 @@ import { atualizarFormacao } from "./modules/atualizarFormacao.js";
 import { atualizarExperiencia } from "./modules/atualizarExperiencia.js";
 import { atualizarHabilidades } from "./modules/atualizarHabilidades.js";
 import { dados } from "./modules/dados.js";
+import { saida3 } from "./modules/atualizarExperiencia.js";
 
+saida3();
 export let pessoaGlobal = null;
 
-const btnGerar = document.getElementById("botao-gerar");
+const btnGerar = document
+  .getElementById("botao-gerar")
+  .addEventListener("click", function () {
+    const form = document.querySelector("form");
 
-btnGerar.addEventListener("click", function (event) {
-  event.preventDefault();
+    const pessoa = dados();
+    pessoaGlobal = pessoa;
 
-  const pessoa = dados();
-
-  pessoaGlobal = pessoa;
-
-  dados();
-  mudarTela();
-  atualizarDadosPessoais();
-  atualizarFormacao();
-  atualizarHabilidades();
-  atualizarExperiencia();
-  atualizarSobreMim();
-  gerarPDF();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const checkboxAtual = document.getElementById("atual");
-  const saidaEmprego3 = document.getElementById("ano-sa3");
-
-  checkboxAtual.addEventListener("change", () => {
-    if (checkboxAtual.checked) {
-      saidaEmprego3.disabled = true;
-      saidaEmprego3.value = "";
-    } else {
-      saidaEmprego3.disabled = false;
+    if (form.c) {
+      dados();
+      mudarTela();
+      atualizarDadosPessoais();
+      atualizarFormacao();
+      atualizarHabilidades();
+      atualizarExperiencia();
+      atualizarSobreMim();
+      gerarPDF();
     }
   });
-});
-
