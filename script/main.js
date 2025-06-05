@@ -21,16 +21,17 @@ const btnGerar = document
 
     const pessoa = dados();
     pessoaGlobal = pessoa;
-
-    if (form.checkValidity()) {
-      dados();
-      mudarTela();
+dados();
       atualizarDadosPessoais();
       atualizarFormacao();
       atualizarHabilidades();
       atualizarExperiencia();
       atualizarSobreMim();
+    if (form.checkValidity()) {
+            mudarTela();
+
+      gerarPDF();
     }
 
-    gerarPDF();
+    
   });
