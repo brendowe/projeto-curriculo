@@ -30,6 +30,7 @@ const btnGerar = document
       atualizarHabilidades();
       atualizarExperiencia();
       atualizarSobreMim();
-      gerarPDF();
     }
+
+    gerarPDF();
   });
