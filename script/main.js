@@ -21,13 +21,13 @@ const btnGerar = document
 
     const pessoa = dados();
     pessoaGlobal = pessoa;
-dados();
+      dados();
       atualizarDadosPessoais();
       atualizarFormacao();
       atualizarHabilidades();
       atualizarExperiencia();
       atualizarSobreMim();
-                mudarTela();
+      mudarTela();
       gerarPDF();
 
  
