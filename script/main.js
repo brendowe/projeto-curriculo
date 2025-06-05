@@ -27,11 +27,10 @@ dados();
       atualizarHabilidades();
       atualizarExperiencia();
       atualizarSobreMim();
-    if (form.checkValidity()) {
-            mudarTela();
-
+                mudarTela();
       gerarPDF();
-    }
+
+ 
 
     
   });
