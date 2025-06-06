@@ -16,14 +16,15 @@ export let pessoaGlobal = null;
 
 const btnGerar = document
   .getElementById("botao-gerar")
-  .addEventListener("click", function () {
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+
     const form = document.querySelector("form");
 
-    const pessoa = dados();
-    pessoaGlobal = pessoa;
-
     if (form.checkValidity()) {
-      dados();
+      const pessoa = dados();
+      pessoaGlobal = pessoa;
+
       mudarTela();
       atualizarDadosPessoais();
       atualizarFormacao();
@@ -31,5 +32,7 @@ const btnGerar = document
       atualizarExperiencia();
       atualizarSobreMim();
       gerarPDF();
+    } else {
+      form.reportValidity();
     }
   });
