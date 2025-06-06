@@ -39,19 +39,3 @@ export const atualizarExperiencia = () => {
     curriculoLista.appendChild(form);
   }
 };
-
-export const saida3 = () => {
-  document.addEventListener("DOMContentLoaded", () => {
-    const checkboxAtual = document.getElementById("atual");
-    const saidaEmprego3 = document.getElementById("ano-sa3");
-
-    checkboxAtual.addEventListener("change", () => {
-      if (checkboxAtual.checked) {
-        saidaEmprego3.disabled = true;
-        saidaEmprego3.value = "";
-      } else {
-        saidaEmprego3.disabled = false;
-      }
-    });
-  });
-};

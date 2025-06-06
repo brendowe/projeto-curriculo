@@ -9,10 +9,9 @@ import { atualizarFormacao } from "./modules/atualizarFormacao.js";
 import { atualizarExperiencia } from "./modules/atualizarExperiencia.js";
 import { atualizarHabilidades } from "./modules/atualizarHabilidades.js";
 import { dados } from "./modules/dados.js";
-import { saida3 } from "./modules/atualizarExperiencia.js";
 
-saida3();
 export let pessoaGlobal = null;
+moduloMascaras.saida3();
 
 const btnGerar = document
   .getElementById("botao-gerar")
