@@ -29,7 +29,7 @@ Um site desenvolvido com o intuito de ajudar pessoas que precisam criar um curr�
 
 ### • Clone este repositório:
 
-```git clone https://github.com/seu-usuario/nome-do-repo.git``` 
+```git clone https://github.com/brendowe/projeto-curriculo.git``` 
 
 
 ### • Acesse a pasta do projeto:
