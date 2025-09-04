@@ -40,7 +40,13 @@ Um site desenvolvido com o intuito de ajudar pessoas que precisam criar um curr�
 
 ## 📸 Demonstração
 
-![Modelo de Tela](imagens/TelaModelo.png) ![Modelo de Currículo](imagens/CurriculoModelo.png)
+### Primeiro você preenche os seus dados no formulário
+
+![Modelo de Tela](imagens/TelaModelo.png) 
+
+### Depois seu currículo é gerado
+
+![Modelo de Currículo](imagens/CurriculoModelo.png)
 
 ## 📜 Licença
 
