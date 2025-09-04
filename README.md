@@ -40,7 +40,7 @@ Um site desenvolvido com o intuito de ajudar pessoas que precisam criar um curr�
 
 ## 📸 Demonstração
 
-![alt text](TelaModelo-1.png) ![alt text](CurriculoModelo-1.png)
+![Modelo de Tela](imagens/TelaModelo.png) ![Modelo de Currículo](imagens/CurriculoModelo.png)
 
 ## 📜 Licença
 
