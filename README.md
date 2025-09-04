@@ -24,18 +24,15 @@ Um site desenvolvido com o intuito de ajudar pessoas que precisam criar um curr�
 
 ### • jsPDF + html2canvas – Exportação para PDF
 
-
 ## 📦 **Como executar o projeto**
 
 ### • Clone este repositório:
 
 ```git clone https://github.com/brendowe/projeto-curriculo``` 
 
-
 ### • Acesse a pasta do projeto:
 
 ```cd projeto-curriculo``` 
-
 
 ### Abra o arquivo index.html no navegador ou direto no terminal.
 
@@ -43,21 +40,7 @@ Um site desenvolvido com o intuito de ajudar pessoas que precisam criar um curr�
 
 ## 📸 Demonstração
 
-(Adicione aqui prints do site ou um GIF mostrando como gerar o currículo.)
-
-## 📌 Melhorias futuras
-
- Personalização de temas do currículo
-
- Opção de múltiplos modelos prontos
-
- Exportação em outros formatos (DOCX, JSON)
-
- Armazenamento em banco de dados
-
-## 🤝 Contribuição
-
-Sinta-se à vontade para abrir issues e enviar pull requests.
+![alt text](TelaModelo-1.png) ![alt text](CurriculoModelo-1.png)
 
 ## 📜 Licença
 
